@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://cxal2qbcc73ad"]
+
+[ext_resource type="Script" uid="uid://mvyyc1u30bid" path="res://scenes/enemies/bat/bat_moving.gd" id="1_qqo10"]
+[ext_resource type="Texture2D" uid="uid://drb2apilokgt1" path="res://assets/levels/world/bat.png" id="2_3bqxs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plqw2"]
+atlas = ExtResource("2_3bqxs")
+region = Rect2(64, 1, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87ri8"]
+atlas = ExtResource("2_3bqxs")
+region = Rect2(80, 1, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o05kd"]
+atlas = ExtResource("2_3bqxs")
+region = Rect2(96, 1, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55vqb"]
+atlas = ExtResource("2_3bqxs")
+region = Rect2(112, 1, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibara"]
+atlas = ExtResource("2_3bqxs")
+region = Rect2(0, 1, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a686h"]
+atlas = ExtResource("2_3bqxs")
+region = Rect2(16, 1, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti8i6"]
+atlas = ExtResource("2_3bqxs")
+region = Rect2(32, 1, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yblc"]
+atlas = ExtResource("2_3bqxs")
+region = Rect2(48, 1, 16, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnldk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plqw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87ri8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o05kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55vqb")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibara")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a686h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti8i6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yblc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48wkk"]
+size = Vector2(20, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk7cf"]
+size = Vector2(22, 16)
+
+[node name="Bat-Moving" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 15
+motion_mode = 1
+script = ExtResource("1_qqo10")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9.53674e-07, 2.38419e-07)
+scale = Vector2(1.25, 1.27273)
+sprite_frames = SubResource("SpriteFrames_cnldk")
+animation = &"hit"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_48wkk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_yk7cf")
+
+[node name="Left" type="Marker2D" parent="."]
+
+[node name="Right" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,209 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3usmm8382qjl"]
+
+[ext_resource type="Script" uid="uid://ou63fjs67gld" path="res://scenes/ui/in_game_ui.gd" id="1_3nhwc"]
+[ext_resource type="Texture2D" uid="uid://dy8521bchdv43" path="res://assets/levels/world/UIbooks&more.png" id="1_4db6k"]
+[ext_resource type="Texture2D" uid="uid://segpl6r7arua" path="res://assets/levels/world/MediavelFree.png" id="2_eeonk"]
+[ext_resource type="Script" uid="uid://co1mxnmep7mxi" path="res://scenes/ui/map_viewport.gd" id="4_3nhwc"]
+[ext_resource type="Texture2D" uid="uid://bexevuyvqh007" path="res://assets/ui/player_dot.png" id="5_5y6qm"]
+[ext_resource type="FontFile" uid="uid://c4mmfi2ryib81" path="res://assets/ui/CompassPro.ttf" id="6_5y6qm"]
+[ext_resource type="Script" uid="uid://l2esinh1l1wq" path="res://scenes/ui/right_page.gd" id="6_spc33"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvqbd"]
+texture = ExtResource("2_eeonk")
+region_rect = Rect2(243, 67, 8, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5y6qm"]
+texture = ExtResource("2_eeonk")
+region_rect = Rect2(227, 83, 10, 9)
+
+[node name="InGameUi" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_3nhwc")
+
+[node name="CenterMenu" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MenuRoot" type="MarginContainer" parent="CenterMenu"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CenterMenu/MenuRoot"]
+custom_minimum_size = Vector2(180, 100)
+layout_mode = 2
+dragging_enabled = false
+dragger_visibility = 2
+
+[node name="LeftPage" type="NinePatchRect" parent="CenterMenu/MenuRoot/HSplitContainer"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+texture = ExtResource("1_4db6k")
+region_rect = Rect2(16, 176, 48, 48)
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage"]
+custom_minimum_size = Vector2(67, 86)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.089
+anchor_top = 0.04
+anchor_right = 0.833
+anchor_bottom = 0.9
+offset_left = -0.0100002
+offset_right = 0.0299911
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/MarginContainer"]
+layout_mode = 2
+dragging_enabled = false
+dragger_visibility = 2
+
+[node name="Map" type="NinePatchRect" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/MarginContainer/VSplitContainer"]
+custom_minimum_size = Vector2(40, 62)
+layout_mode = 2
+texture = ExtResource("1_4db6k")
+region_rect = Rect2(768, 64, 48, 48)
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/MarginContainer/VSplitContainer/Map"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.097
+anchor_right = 0.91
+anchor_bottom = 0.919
+offset_left = -0.0300002
+offset_top = -0.0139999
+offset_right = 0.0299988
+offset_bottom = 0.0219994
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/MarginContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/MarginContainer/VSplitContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 5
+
+[node name="HelpButton" type="Button" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/MarginContainer/VSplitContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../../../../RightPage/VSplitContainer/DisplayMessage")
+focus_neighbor_right = NodePath("../../MarginContainer3/QuitButton")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qvqbd")
+
+[node name="MarginContainer3" type="MarginContainer" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/MarginContainer/VSplitContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 5
+
+[node name="QuitButton" type="Button" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/MarginContainer/VSplitContainer/HBoxContainer/MarginContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../../MarginContainer/HelpButton")
+focus_neighbor_right = NodePath("../../../../../../RightPage/VSplitContainer/DisplayMessage")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5y6qm")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144
+anchor_top = 0.09
+anchor_right = 0.767
+anchor_bottom = 0.61
+offset_left = 0.039999
+offset_right = -0.0299988
+stretch = true
+
+[node name="MapViewport" type="SubViewport" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/SubViewportContainer"]
+unique_name_in_owner = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(56, 52)
+render_target_update_mode = 4
+script = ExtResource("4_3nhwc")
+
+[node name="Camera2D" type="Camera2D" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/SubViewportContainer/MapViewport"]
+zoom = Vector2(0.05, 0.05)
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterMenu/MenuRoot/HSplitContainer/LeftPage/SubViewportContainer"]
+position = Vector2(29, 27)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_5y6qm")
+
+[node name="RightPage" type="NinePatchRect" parent="CenterMenu/MenuRoot/HSplitContainer"]
+layout_mode = 2
+texture = ExtResource("1_4db6k")
+region_rect = Rect2(64, 176, 48, 48)
+script = ExtResource("6_spc33")
+thoughts_file = "res://assets/json/thoughts.json"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CenterMenu/MenuRoot/HSplitContainer/RightPage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144
+anchor_top = 0.04
+anchor_right = 0.922
+anchor_bottom = 0.9
+offset_left = 0.039999
+offset_right = 0.0199966
+dragging_enabled = false
+dragger_visibility = 2
+
+[node name="DisplayMessage" type="RichTextLabel" parent="CenterMenu/MenuRoot/HSplitContainer/RightPage/VSplitContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../LeftPage/MarginContainer/VSplitContainer/HBoxContainer/MarginContainer3/QuitButton")
+focus_neighbor_right = NodePath("../../../LeftPage/MarginContainer/VSplitContainer/HBoxContainer/MarginContainer/HelpButton")
+focus_mode = 2
+theme_override_colors/default_color = Color(0.717647, 0.392157, 0.192157, 1)
+theme_override_constants/line_separation = -2
+theme_override_fonts/normal_font = ExtResource("6_5y6qm")
+theme_override_font_sizes/normal_font_size = 12
+scroll_following = true
+tab_size = 2
+deselect_on_focus_loss_enabled = false
+
+[node name="Thoughts" type="Label" parent="CenterMenu/MenuRoot/HSplitContainer/RightPage/VSplitContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.717647, 0.392157, 0.192157, 1)
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("6_5y6qm")
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 2
+
+[node name="HelpLabel" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -156.5
+offset_right = 156.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_5y6qm")
+theme_override_font_sizes/font_size = 16
+text = "D=destra, A=sinistra, Z=accetta, C=pausa"
+horizontal_alignment = 1
+vertical_alignment = 1

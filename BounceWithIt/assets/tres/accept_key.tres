@@ -1,0 +1,11 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://htfgrbjbehmr"]
+
+[ext_resource type="Texture2D" uid="uid://bryjuph818oha" path="res://assets/ui/accept-key1.png" id="1_xhvfw"]
+[ext_resource type="Texture2D" uid="uid://dncqm6o8w0jrw" path="res://assets/ui/accept-key2.png" id="2_bpt4k"]
+
+[resource]
+frames = 2
+speed_scale = 2.0
+frame_0/texture = ExtResource("1_xhvfw")
+frame_1/texture = ExtResource("2_bpt4k")
+frame_1/duration = 1.0

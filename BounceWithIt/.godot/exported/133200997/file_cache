@@ -1,0 +1,14 @@
+res://assets/tres/normal_button.tres::2b41082962779aa796345a691bb1cf62::1757610072::res://.godot/exported/133200997/export-5d50415360f4895e312b940432260518-normal_button.res
+res://assets/tres/press_button.tres::1f3f304ba4d202f5e6cc9bde470f5367::1757610082::res://.godot/exported/133200997/export-53a3698144a0fefa7cb4bcacdb1eb670-press_button.res
+res://scenes/enemies/bat/bat.tscn::ae06b88ad146513c15019efc2b28b376::1757602496::res://.godot/exported/133200997/export-9304b0ac43a5a9a297c6694b41175c86-bat.scn
+res://scenes/enemies/bat/bat_moving.tscn::5ede1416a8eac134417ab16aacabea54::1757602496::res://.godot/exported/133200997/export-51590f185e51523c1c402ff02f020414-bat_moving.scn
+res://scenes/levels/first_level/first_level.tscn::a45dde55c829514c82d8c99a9d0b713d::1757694166::res://.godot/exported/133200997/export-f3a4acd4638280cb94f32a807f5cf002-first_level.scn
+res://scenes/levels/intro/intro.tscn::3815f1ae71477f23573e1ba46593d0b4::1757694166::res://.godot/exported/133200997/export-3e88ff9ee0d5199b8bdb8ff58f3c370a-intro.scn
+res://scenes/levels/main_menu/main_menu.tscn::6dd495d4ae54bbb559cd01ca8a96e8b3::1757694166::res://.godot/exported/133200997/export-097ae2677019cc08c747463bc1963a84-main_menu.scn
+res://scenes/objects/arrow-shooter/arrow_shooter.tscn::de365b2c297742bc6061491e61513fdb::1757675522::res://.godot/exported/133200997/export-faaa8d2800e8e404e8e0fa96505fe280-arrow_shooter.scn
+res://scenes/objects/arrow-shooter/projectile.tscn::cc6813486e15aa0d389e75593b247f18::1757602473::res://.godot/exported/133200997/export-762231d248c9b506063e61701b83b925-projectile.scn
+res://scenes/player/dialogue_area.tscn::ae8ce2b66d0e1a26fb6dfe3189e70c5f::1757603481::res://.godot/exported/133200997/export-8be1b1112237917706572e971264abab-dialogue_area.scn
+res://scenes/player/player.tscn::9d08b449e5c1dd027548efc5896c6b6f::1757672336::res://.godot/exported/133200997/export-c2c62cb8c73458cd122faf659769dc80-player.scn
+res://scenes/ui/dialogue_system.tscn::5830e1c2827b2759eebc1750667516be::1757694166::res://.godot/exported/133200997/export-0908b302a4891b1aa2e1d3e11aa02d3e-dialogue_system.scn
+res://scenes/ui/in_game_ui.tscn::80ae39f424f67e52f09d2399c77da666::1757685698::res://.godot/exported/133200997/export-f4a82c09c2fa167f2c948fed14e2d3d2-in_game_ui.scn
+res://assets/tres/accept_key.tres::459a5231c3e7586ff2807150b99623d4::1757693675::res://.godot/exported/133200997/export-947723b7013a9d11eb1bde2304bd9f55-accept_key.res

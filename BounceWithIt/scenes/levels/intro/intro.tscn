@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://du55laniw4gol"]
+
+[ext_resource type="Script" uid="uid://bcpxkk5acieg" path="res://scenes/levels/intro/intro.gd" id="1_4pd87"]
+[ext_resource type="Texture2D" uid="uid://m7ilcjkflbh8" path="res://assets/talking-sprites/gary.png" id="2_528pf"]
+[ext_resource type="Texture2D" uid="uid://cfr2ercma7ftq" path="res://assets/ui/textBackgroung.png" id="3_7hpr3"]
+[ext_resource type="FontFile" uid="uid://c4mmfi2ryib81" path="res://assets/ui/CompassPro.ttf" id="4_bsuqq"]
+[ext_resource type="Texture2D" uid="uid://htfgrbjbehmr" path="res://assets/tres/accept_key.tres" id="5_wil3r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipvhx"]
+bg_color = Color(0.65, 0.65, 0.65, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1om3"]
+line_spacing = 2.0
+font = ExtResource("4_bsuqq")
+font_size = 14
+
+[node name="Intro" type="CanvasLayer"]
+process_mode = 3
+layer = 128
+script = ExtResource("1_4pd87")
+scene_text_file = "res://assets/json/basement.json"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(320, 180)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(210, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+dragger_visibility = 2
+
+[node name="IconBackground" type="Panel" parent="PanelContainer/HSplitContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ipvhx")
+
+[node name="SpeakerSprite" type="TextureRect" parent="PanelContainer/HSplitContainer/IconBackground"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 37.0
+offset_bottom = 3.0
+texture = ExtResource("2_528pf")
+expand_mode = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/HSplitContainer"]
+layout_mode = 2
+texture = ExtResource("3_7hpr3")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextLabel" type="Label" parent="PanelContainer/HSplitContainer/NinePatchRect"]
+custom_minimum_size = Vector2(164, 34)
+layout_mode = 2
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 169.0
+offset_bottom = 37.0
+label_settings = SubResource("LabelSettings_h1om3")
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="Control" parent="PanelContainer/HSplitContainer/NinePatchRect"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HSplitContainer/NinePatchRect/MarginContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+offset_left = 153.0
+offset_top = 23.0
+offset_right = 169.0
+offset_bottom = 39.0
+texture = ExtResource("5_wil3r")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_bsuqq")
+theme_override_font_sizes/font_size = 16
+text = "D=destra, A=sinistra, Z=accetta, C=pausa"
+horizontal_alignment = 1

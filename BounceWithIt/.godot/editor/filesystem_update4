@@ -1,0 +1,6 @@
+res://scenes/ui/dialogue_system.tscn
+res://scenes/levels/intro/intro.gd
+res://scenes/levels/first_level/first_level.tscn
+res://scenes/levels/main_menu/main_menu.tscn
+res://scenes/levels/intro/intro.tscn
+res://scenes/ui/dialogue_system.gd

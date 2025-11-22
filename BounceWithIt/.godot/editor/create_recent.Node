@@ -1,0 +1,14 @@
+AudioStreamPlayer2D
+Label
+RichTextLabel
+ColorRect
+CanvasLayer
+CenterContainer
+Sprite2D
+Camera2D
+Line2D
+SubViewportContainer
+SubViewport
+Panel
+Button
+VBoxContainer
